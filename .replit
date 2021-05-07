@@ -1,1 +1,8 @@
 language = "java10"
+
+# COMPILE the CLASS
+#run = "javac -d bin -classpath bin src/gr11review/part2/Main.java"
+#run = "javac -d bin src/gr11review/part2/Utility.java"
+
+# RUN THE CLASS
+run = "java --class-path bin gr11review.part2.Main"
