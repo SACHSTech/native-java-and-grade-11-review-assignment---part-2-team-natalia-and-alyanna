@@ -1,4 +1,6 @@
 package gr11review.part2;
+import java.io.*;
+import java.util.Scanner;
 public class Utility {
 
     //Methods 1
@@ -11,4 +13,28 @@ public class Utility {
         
         return strNew;
     } 
+
+    //File IO - Read 1
+    public static String longestWord(String filenametxt){
+        
+        String longestWord = "";
+        String currentWord;
+        
+        try (Scanner fileScan = new Scanner (new File(filenametxt))){
+
+            while (fileScan.hasNext()){
+                currentWord = fileScan.next();
+
+                if(currentWord.length() > longestWord.length()){
+                    longestWord = currentWord;
+                }
+            }
+
+        }catch (Exception a){
+            System.out.println("Error");
+        }
+
+    
+        return longestWord;
+    }
 }
