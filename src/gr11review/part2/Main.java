@@ -1,5 +1,6 @@
 package gr11review.part2;
 import java.io.*;
+import java.util.Arrays;
 import gr11review.part2.*;
 
 public class Main{
@@ -19,6 +20,10 @@ public class Main{
         word = Utility.longestWord("testfile.txt");
 
         System.out.println(word);
+
+        //Testing Array 1
+         int[] nums = Utility.tenRun(new int[] {10, 1, 20, 2});
+         System.out.println(Arrays.toString(nums));
 
     }
 }

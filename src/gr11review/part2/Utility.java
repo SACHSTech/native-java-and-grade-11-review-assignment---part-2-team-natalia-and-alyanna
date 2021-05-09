@@ -33,8 +33,26 @@ public class Utility {
         }catch (Exception a){
             System.out.println("Error");
         }
-
-    
         return longestWord;
     }
+
+    //Array 1 - One Dimensional
+    public static int[] tenRun(int[] nums){
+        
+        for (int i = 0; i < nums.length - 1; i++){
+
+            //if the number is a multiple of 10
+            if (nums[i] % 10 == 0){ 
+
+                //if the next number is not a multiple of 10
+                if (nums [i + 1] % 10 != 0){
+
+                    //replace the next number with the previous multiple of 10
+                    nums[i + 1] = nums[i];
+                }
+            }
+        }
+        return nums;
+    }
+    
 }
