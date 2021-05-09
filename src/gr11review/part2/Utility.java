@@ -72,5 +72,43 @@ public class Utility {
   }
 
   // Array 2 - One Dimensional
+  public static int[] notAlone(int[] nums, int value) {
+
+    // Initialize variables
+    int[] result = new int[nums.length];
+
+    for (int intX = 0; intX < nums.length; intX++) {
+
+      if (intX == 0 || intX == (nums.length - 1)) {
+        result[intX] = nums[intX];
+      } else {
+        int intBeforeValue = nums[intX - 1];
+        int intAfterValue = nums[intX + 1];
+        int intCurrentValue = nums[intX];
+
+        result[intX] = intCurrentValue;
+
+        // Input given value is equal to the current value
+        if (intCurrentValue == value) {
+          // Check whether before or after value is greater
+          if (intBeforeValue >= intAfterValue) {
+            // Check whether before value is greater than the current value
+            if (intBeforeValue > intCurrentValue) {
+              result[intX] = intBeforeValue;
+            }
+          } else { 
+            // Check whether after value is greater than the current value
+            if (intAfterValue > intCurrentValue) {
+              // Use after value
+              result[intX] = intAfterValue;
+            }
+          }
+        }
+      }
+    }
+
+    return result;
+
+  }
 
 }
