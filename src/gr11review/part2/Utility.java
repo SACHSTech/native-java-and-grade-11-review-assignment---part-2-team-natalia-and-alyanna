@@ -1,4 +1,5 @@
 package gr11review.part2;
+
 import java.io.*;
 
 public class Utility {
@@ -42,4 +43,34 @@ public class Utility {
     return intSumOfNumbers;
   }
     
+  // File IO - Read 2
+  public static String alphaWord(String filenametxt) {
+
+    // Initialize variables
+    StringBuilder contentBuilder = new StringBuilder();
+    String strCurrentWord = null;
+    String strFirstWord = null;
+
+    // Open file and read line by line
+    try (BufferedReader br = new BufferedReader(new FileReader(filenametxt))) {
+        
+      while ((strCurrentWord = br.readLine()) != null) {
+        
+        if (strFirstWord == null) {
+          strFirstWord = strCurrentWord;
+        } else if (strCurrentWord.compareTo(strFirstWord) < 0) {
+          strFirstWord = strCurrentWord;
+        }
+
+      }
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    return strFirstWord;
+  }
+
+  // Array 2 - One Dimensional
+
 }
