@@ -54,5 +54,29 @@ public class Utility {
         }
         return nums;
     }
+
+    //Array 3 - One Dimensional
+    public static boolean linearIn(int[] outer, int[] inner){
+
+        //if all the numbers in the inner array appear in the outer array, return true
+       int d = 0;
+       
+        for (int i = 0; i < outer.length; i++){
+            if (outer[i] == inner[d]){
+
+
+            }
+
+        }
+        return true;
+    }
+
+
+
+
+    //Array 5 - Two Dimensional
+    public static void pascalTri(int i, int j){
+
+    }
     
 }
