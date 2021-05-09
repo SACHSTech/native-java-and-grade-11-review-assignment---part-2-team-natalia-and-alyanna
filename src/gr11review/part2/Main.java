@@ -20,6 +20,12 @@ public class Main {
     System.out.println(Arrays.toString(Utility.notAlone(new int[]{1,2,3,2,5,2}, 2)));
     System.out.println(Arrays.toString(Utility.notAlone(new int[]{3,4}, 3)));
 
+    // Array 4 - One Dimensional - Two Loops
+    System.out.println(Utility.canBalance(new int[]{1,1,1,2,1}));
+    System.out.println(Utility.canBalance(new int[]{2,1,1,2,1}));
+    System.out.println(Utility.canBalance(new int[]{10,10}));
+
+
   }
 
 }

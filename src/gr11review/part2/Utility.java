@@ -108,7 +108,36 @@ public class Utility {
     }
 
     return result;
+  }
 
+  // Array 4 - One Dimensional - Two Loops
+  public static boolean canBalance(int[] nums) {
+
+    // Initialize variables
+    int intSum = 0;
+    int intSumOfLeftSide = 0;
+    int intSumOfRightSide = 0;
+
+    // Get total sum of full array
+    for (int intX = 0; intX < nums.length; intX++) {
+      intSum = intSum + nums[intX];
+    }
+
+    intSumOfRightSide = intSum;
+
+    // Find balance of numbers
+    for (int intY = 0; intY < nums.length; intY++) {
+      intSumOfLeftSide = intSumOfLeftSide + nums[intY];
+      intSumOfRightSide = intSumOfRightSide - nums[intY];
+
+      if (intSumOfLeftSide == intSumOfRightSide) {
+        // Return true if numbers balance
+        return true;
+      }
+    }
+
+    // Return false if numbers don't balance
+    return false;
   }
 
 }

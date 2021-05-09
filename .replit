@@ -11,4 +11,4 @@ language = "java10"
 #run = "javac -d bin -sourcepath src -classpath lib/junit-platform-console-standalone-1.7.0-M1.jar src/gr11review/test2/Array2Test.java"
 
 # RUN the TEST CLASS
-run = "java -jar lib/junit-platform-console-standalone-1.7.0-M1.jar --classpath bin -c gr11review.test2.Array2Test"
+#run = "java -jar lib/junit-platform-console-standalone-1.7.0-M1.jar --classpath bin -c gr11review.test2.Array2Test"
