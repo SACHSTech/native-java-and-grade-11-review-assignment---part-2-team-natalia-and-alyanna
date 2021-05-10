@@ -25,5 +25,11 @@ public class Main{
          int[] nums = Utility.tenRun(new int[] {10, 1, 20, 2});
          System.out.println(Arrays.toString(nums));
 
+         //Testing Array 3
+
+         boolean testing = Utility.linearIn(new int[]{1, 3, 5, 7, 9}, new int[]{5, 7});
+         System.out.println(testing);
+
+
     }
 }

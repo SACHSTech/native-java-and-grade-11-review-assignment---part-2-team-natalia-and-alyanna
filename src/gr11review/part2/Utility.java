@@ -59,24 +59,28 @@ public class Utility {
     public static boolean linearIn(int[] outer, int[] inner){
 
         //if all the numbers in the inner array appear in the outer array, return true
-       int d = 0;
+        
+        int d = 0;
+        int match = 0;
        
+        if ( inner.length == 0){
+            return true;
+        }
         for (int i = 0; i < outer.length; i++){
+           
             if (outer[i] == inner[d]){
-
-
+                match++;
+                d++;
+            } else if (outer[i] > inner[d]){
+                return false;
             }
 
+            if (match == inner.length){
+                return true;
+            } 
         }
-        return true;
-    }
 
-
-
-
-    //Array 5 - Two Dimensional
-    public static void pascalTri(int i, int j){
-
+        return false;
     }
     
 }
