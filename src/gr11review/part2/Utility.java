@@ -140,4 +140,51 @@ public class Utility {
     return false;
   }
 
+  // Array 6 - Two Dimensional
+  public static void diagonal(int n) throws IOException {
+
+    // Initialize variables
+    int[][] result = new int[n][n];
+    int intOnePosition = n - 1;
+
+    // Derive values for two dimensional array
+    for (int intX = 0; intX < n; intX++) {
+      for (int intY = 0; intY < n; intY++ ) {
+        
+        if (intY < intOnePosition) {
+          result[intX][intY] = 0;
+        } else if (intY == intOnePosition) {
+          result[intX][intY] = 1;
+        } else {
+          result[intX][intY] = 2;
+        }
+      } // end of inner loop
+
+      intOnePosition--;
+
+    } // end of outer loop 
+    
+    PrintWriter pw = new PrintWriter(new FileWriter("resource/diagonalOut.txt"));
+ 
+    // Initialize variables
+    String strOutput = "";
+
+    // Write to the output file
+    for (int intX = 0; intX < n; intX++) {
+      for (int intY = 0; intY < n; intY++ ) {
+
+        if (intY == (n - 1)) {
+          strOutput = strOutput + result[intX][intY];
+        } else {
+          strOutput = strOutput + result[intX][intY] + ",";
+        }
+	    } // end of inner loop
+
+		  pw.write(strOutput + "\n");
+      strOutput = "";
+    } // end of outer loop
+ 
+	  pw.close();
+  }
+
 }
