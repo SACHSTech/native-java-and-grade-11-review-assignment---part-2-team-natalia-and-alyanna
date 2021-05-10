@@ -27,8 +27,11 @@ public class Main{
 
          //Testing Array 3
 
-         boolean testing = Utility.linearIn(new int[]{1, 3, 5, 7, 9}, new int[]{5, 7});
+         boolean testing = Utility.linearIn(new int[]{1, 2, 4, 6, 3}, new int[]{2, 4});
          System.out.println(testing);
+
+         //Testing Array 5
+         Utility.pascalTri(4,5);
 
 
     }

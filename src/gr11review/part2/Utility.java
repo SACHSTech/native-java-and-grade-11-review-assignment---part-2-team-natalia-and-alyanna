@@ -82,5 +82,48 @@ public class Utility {
 
         return false;
     }
-    
+
+    public static void pascalTri(int i, int j) throws IOException{
+
+        //Initialize array and set dimensions
+        int[][] table;
+        table = new int[i][j];
+       
+        //Calculates numbers in pascal's triangle and places them in the array
+        for (int k = 0; k < i; k++){
+            table[k][0] = 1;
+        }
+        for (int n = 0; n < j; n++){
+            table[0][n] = 1;
+        }
+
+        if (i > 1 && j > 1){
+            for (int k = 1; k < i; k++){
+                for (int n = 1; n < j; n++){
+                    table[k][n] = (table[k - 1][n] + table[k][n - 1]);
+                }
+            }
+        
+        }
+        //Initializes variables that write to file 'pascal.txt'
+        BufferedWriter myWriter = new BufferedWriter(new FileWriter("pascalOut.txt"));
+        
+        for (int k = 0; k < i; k++){
+            for (int n = 0; n < j; n++){
+
+                //Writes numbers from the array
+                myWriter.write(Integer.toString(table[k][n]));
+
+                //Write commas to separate the numbers
+                if (n < j - 1){
+                    myWriter.write(",");
+                }
+            }
+            //Creates a new row
+            myWriter.write('\n');
+        }
+        //Close file
+        myWriter.close();
+    }
+
 }
