@@ -1,7 +1,6 @@
 package gr11review.part2;
 import java.io.*;
 import java.util.Arrays;
-import gr11review.part2.*;
 
 public class Main{
     public static void main(String[] args) throws IOException{
@@ -18,7 +17,6 @@ public class Main{
         String word;
 
         word = Utility.longestWord("testfile.txt");
-
         System.out.println(word);
 
         //Testing Array 1
