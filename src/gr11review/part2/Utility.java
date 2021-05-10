@@ -3,7 +3,15 @@ import java.io.*;
 import java.util.Scanner;
 public class Utility {
 
-    //Methods 1
+/**
+* This method zipZap lets the user specify a String
+* and removes the middle character within a 3 letter string in the pattern
+* z_p, wherever this is found
+*
+* @param str  The String which the program searches for instances of 'z_p'
+* @return A string with the middle character removed from instances of 'z_p'
+* @author Natalia Garcia-Arias
+*/
     public static String zipZap(String str){
 
         String strNew;
@@ -14,12 +22,21 @@ public class Utility {
         return strNew;
     } 
 
-    //File IO - Read 1
+/**
+* This method longestWord searches for the longest word in
+* a file specified by the user and returns such word.
+*
+* @param filenametxt  The name of a file containing a single word on each line
+* @return A string containing the longest word in the specified file
+* @author Natalia Garcia-Arias
+*/
     public static String longestWord(String filenametxt){
         
+        //Initializes variables
         String longestWord = "";
         String currentWord;
         
+        //Scans file for the longest word
         try (Scanner fileScan = new Scanner (new File(filenametxt))){
 
             while (fileScan.hasNext()){
@@ -36,7 +53,15 @@ public class Utility {
         return longestWord;
     }
 
-    //Array 1 - One Dimensional
+/**
+* This method tenRun lets the user specify a one-dimensional array 
+* and changes all the values following a multiple of 10 to be that multiple
+* until the next multiple of 10 is encountered.
+*
+* @param nums The one-dimensional array specified by the user 
+* @return The array with all non multiples of 10 replaced by multiples of 10
+* @author Natalia Garcia-Arias
+*/
     public static int[] tenRun(int[] nums){
         
         for (int i = 0; i < nums.length - 1; i++){
@@ -55,11 +80,20 @@ public class Utility {
         return nums;
     }
 
-    //Array 3 - One Dimensional
+/**
+* This method linearIn lets the user specify two one-dimensional arrays
+* sorted in increasing order,
+* and returns a true boolean value if all numbers in inner appear 
+* in outer
+*
+* @param inner  The inner array who's elements are checked for in the outer array
+* @param outer  The outer array which is checked for the elements in the inner array
+* @return boolean value 
+* @author Natalia Garcia-Arias
+*/
     public static boolean linearIn(int[] outer, int[] inner){
 
-        //if all the numbers in the inner array appear in the outer array, return true
-        
+        //Initialize variables
         int d = 0;
         int match = 0;
        
@@ -67,7 +101,7 @@ public class Utility {
             return true;
         }
         for (int i = 0; i < outer.length; i++){
-           
+           //Counts when there is a match in values from inner with outer
             if (outer[i] == inner[d]){
                 match++;
                 d++;
@@ -75,6 +109,7 @@ public class Utility {
                 return false;
             }
 
+            //Returns true the number of found values matches length of inner
             if (match == inner.length){
                 return true;
             } 
@@ -82,7 +117,14 @@ public class Utility {
 
         return false;
     }
-
+/**
+* This method pascalTri outputs to a text file a comma-separated table
+* containing a number of 'i' rows and 'j' columns of pascal's triangle. 
+*
+* @param i  number of rows in the table
+* @param j  number of columns in the table
+* @author Natalia Garcia-Arias
+*/
     public static void pascalTri(int i, int j) throws IOException{
 
         //Initialize array and set dimensions
@@ -106,7 +148,7 @@ public class Utility {
         
         }
         //Initializes variables that write to file 'pascal.txt'
-        BufferedWriter myWriter = new BufferedWriter(new FileWriter("pascalOut.txt"));
+        BufferedWriter myWriter = new BufferedWriter(new FileWriter("src/gr11review/part2/pascalOut.txt"));
         
         for (int k = 0; k < i; k++){
             for (int n = 0; n < j; n++){
