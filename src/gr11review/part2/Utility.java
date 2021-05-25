@@ -286,7 +286,7 @@ public class Utility {
         
         }
         //Initializes variables that write to file 'pascal.txt'
-        BufferedWriter myWriter = new BufferedWriter(new FileWriter("src/gr11review/part2/pascalOut.txt"));
+        BufferedWriter myWriter = new BufferedWriter(new FileWriter("pascalOut.txt"));
         
         for (int k = 0; k < i; k++){
             for (int n = 0; n < j; n++){
