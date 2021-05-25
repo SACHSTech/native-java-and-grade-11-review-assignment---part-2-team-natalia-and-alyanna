@@ -330,7 +330,8 @@ public class Utility {
 
     } // end of outer loop 
     
-    PrintWriter pw = new PrintWriter(new FileWriter("resource/diagonalOut.txt"));
+    //PrintWriter pw = new PrintWriter(new FileWriter("resource/diagonalOut.txt"));
+    PrintWriter pw = new PrintWriter(new FileWriter("diagonalOut.txt"));
  
     // Initialize variables
     String strOutput = "";
